@@ -124,11 +124,12 @@
     }
 
 
+
     void Shape::SetPosition(float px, float py)
     {
         if(px <= .0)
         {
-            cout << "The minimum value for x position is 0";
+            ErrorMessage( "The minimum value for x position is 0");
             x = .0;
         }
         else
@@ -138,7 +139,7 @@
 
         if(py <= .0)
         {
-            cout << "The minimum value for y position is 0";
+            ErrorMessage( "The minimum value for y position is 0");
             y = .0;
         }
         else
@@ -151,7 +152,7 @@
     {
         if(h <= .0)
         {
-            cout << "The minimum value for height is 0";
+            ErrorMessage( "The minimum value for height is 0");
             height = .0;
         }
         else
@@ -164,7 +165,7 @@
     {
         if(w <= .0)
         {
-            cout << "The minimum value for height is 0";
+            ErrorMessage( "The minimum value for height is 0");
             width = .0;
         }
         else
@@ -178,6 +179,8 @@
         SetWidth(w);
         SetHeight(h);
     }
+
+
 
     void Shape::SetText(const char* string)
     {
@@ -199,6 +202,8 @@
         strncpy(text, string, TEXTSIZE-1);
     }
 
+
+
     void Shape::GetPosition(float &px, float &py)
     {
         px = GetX();
@@ -210,6 +215,8 @@
         h = GetHeight();
         w = GetWidth();
     }
+
+
 
     float Shape::GetX()
     {
@@ -231,10 +238,14 @@
         return width;
     }
 
+
+
     float Shape::GetArea()
     {
         return width*height;
     }
+
+
 
     void Shape::GetText(char* string)
     {
@@ -249,4 +260,26 @@
         }
 
         strncpy(string, text, TEXTSIZE-1);
+    }
+
+
+
+    void Shape::ErrorMessage(const char *string)
+    {
+        std::cerr << "[Shape - ERROR] " << (string ? string : "(null)") << std::endl;
+    }
+
+    void Shape::WarningMessage(const char *string)
+    {
+        std::cerr << "[Shape - WARNING] " << (string ? string : "(null)") << std::endl;
+    }
+
+    void Shape::Dump()
+    {
+        std::cout << "Shape Dump:" << std::endl;
+        std::cout << "  Position: (" << x << ", " << y << ")" << std::endl;
+        std::cout << "  Width:  " << width << std::endl;
+        std::cout << "  Height: " << height << std::endl;
+        std::cout << "  Area:   " << GetArea() << std::endl;
+        std::cout << "  Text:   " << (text ? text : "(null)") << std::endl;
     }
