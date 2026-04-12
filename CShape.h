@@ -1,0 +1,91 @@
+/*! \file CShape.h
+    \brief Declaration of the class Shape
+	\author Paolo Gastaldo
+*/
+
+#ifndef SHAPE_H
+#define SHAPE_H
+
+#define TEXTSIZE 1000
+
+using namespace std;
+
+/// @class Shape
+/// @brief to manage a generico object with a shape
+class Shape
+{
+private:
+
+    /// position of the shape in the page/grid
+    float x;
+    float y;
+
+    /// dimensions of the bounding box
+    float height;
+    float width;
+
+    /// optional text inside the shape
+    char* text;
+
+public:
+
+    /// @name CONSTRUCTORS / DESTRUCTOR
+    /// @{
+    Shape();
+    Shape(float px, float py, float w, float h);
+    Shape(const Shape &r);
+
+    ~Shape();
+    /// @}
+
+
+    /// @name OPERATORS
+    /// @{
+    Shape& operator=(const Shape &r);
+    bool operator==(const Shape &r);
+    /// @}
+
+
+    /// @name BASIC HANDLING
+    /// @{
+    void Init();
+    void Init(const Shape &r);
+    void Reset();
+    /// @}
+
+
+    /// @name GETTERS / SETTERS
+    /// @{
+
+    void SetPosition(float px, float py);
+    void SetHeight(float h);
+    void SetWidth(float w);
+    void SetDim(float w, float h);
+
+    void SetText(const char* string);
+
+    void GetPosition(float &px, float &py);
+    void GetDim(float &w, float &h);
+
+    float GetX();
+    float GetY();
+    float GetHeight();
+    float GetWidth();
+
+    float GetArea();
+
+    void GetText(char* string);
+
+    /// @}
+
+
+    /// @name DEBUG and SERIALIZATION
+    /// @{
+    void ErrorMessage(const char *string);
+    void WarningMessage(const char *string);
+    void Dump();
+    /// @}
+
+};
+
+#endif
