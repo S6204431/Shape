@@ -1,38 +1,38 @@
-/*! \file CParal.h
-    \brief Declaration of the class Paral
+/*! \file CRectangle.h
+    \brief Declaration of the class Rectangle
     \author Paolo Gastaldo
 */
 
-#ifndef Paral_H
-#define Paral_H
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
 #include "CShape.h"
 
-/// @class Paral
-/// @brief to manage an object with the shape of a Paral
-class Paral : public Shape
+/// @class Rectangle
+/// @brief to manage an object with the shape of a rectangle
+class Rectangle : public Shape
 {
 public:
 
     /// @name CONSTRUCTORS / DESTRUCTOR
     /// @{
-    Paral();
-    Paral(float px, float py, float w, float h);
-    Paral(const Paral &r);
+    Rectangle();
+    Rectangle(float px, float py, float w, float h);
+    Rectangle(const Rectangle &r);
 
-    ~Paral();
+    ~Rectangle();
     /// @}
 
     /// @name OPERATORS
     /// @{
-    Paral& operator=(const Paral &r);
-    bool operator==(const Paral &r);
+    Rectangle& operator=(const Rectangle &r);
+    bool operator==(const Rectangle &r);
     /// @}
 
     /// @name BASIC HANDLING
     /// @{
     void Init();
-    void Init(const Paral &r);
+    void Init(const Rectangle &r);
     void Reset();
     /// @}
 

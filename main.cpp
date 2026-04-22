@@ -2,14 +2,14 @@
 
 #include "CShape.h"
 #include "CRombo.h"
-#include "CParal.h"
+#include "CRectangle.h"
 
 using namespace std;
 
 int main() {
 
 	Shape sA(0,0,10,5);
-	Paral reB(0,16,3,7);
+	Rectangle reB(0,16,3,7);
 	Rombo roC;
 
 	sA.Dump();
