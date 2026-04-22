@@ -1,48 +1,30 @@
 #include<iostream>
 
 #include "CShape.h"
+#include "CRombo.h"
+#include "CParal.h"
 
 using namespace std;
 
 int main() {
 
-	
 	Shape sA(0,0,10,5);
-	Shape sB(0,16,3,7);
-	Shape sC = sA;
-	
-	sA.SetText("sono shape A");
-	
-	cout << endl;
-	cout << "fase 1" << endl;
-	cout << endl;
-
+	Paral reB(0,16,3,7);
+	Rombo roC;
 
 	sA.Dump();
-	sB.Dump();
-	sC.Dump();
-	
-	if (sA == sB)
-		cout << "shape A e shape B sono uguali" << endl;
-	else 
-		cout << "shape A e shape B sono diversi" << endl;
-	if (sA == sC)
-		cout << "shape A e shape C sono uguali" << endl;
-	else 
-		cout << "shape A e shape C sono diversi" << endl;
-	
-	cout << endl;
-	cout << "fase 2" << endl;
-	cout << endl;
-	
-	sC = sB; 
-	if (sA == sC)
-		cout << "shape A e shape C sono uguali" << endl;
-	else 
-		cout << "shape A e shape C sono diversi" << endl;
-	sA.Dump();
-	sC.Dump();
-	
+	reB.Dump();
+	roC.Dump();
+
+	reB.SetText("Sono un rettangolo");
+	reB.Dump();
+
+	Rombo roD(19,27,3,7);
+	if(roD.GetBoundingBoxArea() == reB.GetBoundingBoxArea())
+	{
+		cout << "sono uguali" << endl;
+	}
+
 	return 0;
 
 }
