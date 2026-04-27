@@ -72,6 +72,9 @@ public:
     float GetHeight();
     float GetWidth();
 
+    virtual float GetArea() = 0;
+    virtual float GetPerimeter() = 0;
+
     float GetBoundingBoxArea();
 
     void GetText(char* string);
