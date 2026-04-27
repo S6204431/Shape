@@ -35,7 +35,7 @@ public:
     Shape(float px, float py, float w, float h);
     Shape(const Shape &r);
 
-    ~Shape();
+    virtual ~Shape();
     /// @}
 
 
@@ -83,7 +83,7 @@ public:
     /// @{
     void ErrorMessage(const char *string);
     void WarningMessage(const char *string);
-    void Dump();
+    virtual void Dump();
     /// @}
 
 };
